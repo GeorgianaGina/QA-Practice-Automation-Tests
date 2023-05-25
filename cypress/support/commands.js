@@ -10,9 +10,20 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
+Cypress.Commands.add("login", (email, password) => {
+  cy.get("#forms").click();
+  cy.get('a[href="login.html"]').click();
+  cy.get("#email").type(email);
+  cy.get("#password").type(password);
+  cy.get("#submitLoginBtn").click();
+});
+
+
+//Cypress.Commands.add("numeComandaNoastra", (parametrii, parametrii) => {
+//   logica test
+// });
+
+
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
